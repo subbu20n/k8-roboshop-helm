@@ -3,4 +3,4 @@ deployment:
      imageVersion: v1 
 hpa: 
    maxReplicas: 5
-   UtiliZations: 80      
+   Utilizations: 80      
