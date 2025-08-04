@@ -13,7 +13,7 @@ spec:
               component: mysql
               project: roboshop 
               tier: database 
-   serviceName: "redis-headless" 
+   serviceName: "mysql-headless" 
    replicas: 1 
    template: 
         metadata: 
@@ -31,9 +31,9 @@ spec:
    volumeClaimTemplates: 
    - metadata: 
           name: mysql-data 
-   spec: 
-      accessModes: ["ReadWriteOnce"] 
-      storageClassName: "roboshop-ebs" 
-      resources: 
+     spec: 
+       accessModes: ["ReadWriteOnce"] 
+       storageClassName: "roboshop-ebs" 
+       resources: 
            requests: 
                 storage: 2Gi                                                  
