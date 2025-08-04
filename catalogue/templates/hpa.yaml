@@ -1,5 +1,5 @@
 apiVersion: autoscaling/v2
-kind: HoriZontalPodAutoscalar 
+kind: HorizontalPodAutoscalar 
 metadata: 
        name: catalogue 
        namespace: roboshop 
