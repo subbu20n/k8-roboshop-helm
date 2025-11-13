@@ -1,3 +1,3 @@
 statefulset:
      imageURL: subbu2/mongodb 
-     imageVersion: v1 
+     imageVersion: v1  

@@ -10,9 +10,9 @@ metadata:
 spec: 
    selector: 
        component: mongodb 
-       project: roboshop 
+       project: roboshop  
        tier: database 
    ports: 
    - protocol: TCP 
      port: 27017 # service port 
-     targetPort: 27017 # container port             
+     targetPort: 27017 # container port              

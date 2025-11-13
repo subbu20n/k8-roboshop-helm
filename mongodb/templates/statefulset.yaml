@@ -8,32 +8,33 @@ metadata:
         project: roboshop 
         tier: database 
 spec: 
-   selector: 
-       matchLabels: 
-              component: mongodb 
-              project: roboshop 
-              tier: database 
-   serviceName: "mongodb-headless" 
    replicas: 1 
+   selector: 
+      matchLabels: 
+         component: mongodb 
+         project: roboshop 
+         tier: database 
+   serviceName: "mongodb-headless"              
    template: 
-        metadata: 
-             labels: 
-                 component: mongodb 
-                 project: roboshop 
-                 tier: database 
-        spec: 
-           containers: 
-           - name: mongodb 
-             image: "{{ .Values.statefulset.imageURL }}:{{ .Values.statefulset.imageVersion }}" 
-             volumeMounts: 
-             - name: mongodb-data 
-               mountPath: /data/db 
+      metadata:  
+         labels: 
+            component: mongodb 
+            project: roboshop 
+            tier: database 
+      spec: 
+        containers: 
+        - name: mongodb 
+          image: {{ .Values.statefulset.imageURL }}:{{ .Values.statefulset.imageVersion }} 
+          volumeMounts: 
+          - name: mongodb-data 
+            mountPath: /data/db 
    volumeClaimTemplates: 
    - metadata: 
-          name: mongodb-data 
+        name: mongodb-data 
      spec: 
         accessModes: ["ReadWriteOnce"] 
-        storageClassName: "roboshop-ebs" 
+        storageClassName: roboshop-ebs 
         resources: 
-            requests: 
-                 storage: 2Gi                                                  
+           requests: 
+              storage: 2Gi 
+

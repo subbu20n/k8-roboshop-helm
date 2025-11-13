@@ -15,7 +15,7 @@ spec:
                tier: app 
     template: 
         metadata: 
-              labels: 
+              labels:  
                    component: catalogue 
                    project: roboshop 
                    tier: app 
